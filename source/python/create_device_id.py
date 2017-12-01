@@ -56,14 +56,15 @@ def create_iothub_device(connection_string, device_id="AgitareTechIoTWorkshopDev
 if __name__ == '__main__':
     print("")
     print("Python {0}".format(sys.version))
+    print("")
 
     # ask for user input
-    CONNECTION_STRING = input("Please enter Azure IoT Hub connection string:")
-    DEVICE_ID = input("Please enter device identifier:")
+    CONNECTION_STRING = input("Please enter Azure IoT Hub connection string: ")
+    DEVICE_ID = input("Please enter device identifier              : ")
+    print("")
 
     # show the information used to create the device
     print("Creating device using the Azure IoT Hub Service SDK for Python")
-    print("")
     print("    Connection string = {0}".format(CONNECTION_STRING))
     print("    Device ID         = {0}".format(DEVICE_ID))
 
