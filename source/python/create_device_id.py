@@ -35,7 +35,7 @@ def create_iothub_device(connection_string, device_id="AgitareTechIoTWorkshopDev
 
     :param: `connection_string` A connection string used to connect to IoT Hub
 
-    :param: `device_id` The device identifier to use. Defaults to _AgitareTechIoTWorkshopDevice_
+    :param: `device_id` The device identifier to use; defaults to _AgitareTechIoTWorkshopDevice_
 
     :type: `connection_string` str
 
@@ -68,4 +68,5 @@ if __name__ == '__main__':
     print("    Connection string = {0}".format(CONNECTION_STRING))
     print("    Device ID         = {0}".format(DEVICE_ID))
 
+    # create the device
     create_iothub_device(CONNECTION_STRING, DEVICE_ID)
