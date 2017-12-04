@@ -23,15 +23,10 @@ function printDeviceInfo(err, deviceInfo, res) {
         console.log("IoT Hub Device:")
         console.log("  deviceId                    = " + deviceInfo.deviceId)
         console.log("  primaryKey                  = " + deviceInfo.authentication.symmetricKey.primaryKey)
-        console.log("  secondaryKey                = ")
-        console.log("  connectionState             = ")
+        console.log("  secondaryKey                = " + deviceInfo.authentication.symmetricKey.secondaryKey)
         console.log("  status                      = " + deviceInfo.status)
         console.log("  lastActivityTime            = " + deviceInfo.lastActivityTime)
         console.log("  cloudToDeviceMessageCount   = " + deviceInfo.cloudToDeviceMessageCount)
-        console.log("  isManaged                   = ")
-        console.log("  authMethod                  = ")
         console.log("")
-    
-        console.log('Device Info: ' + deviceInfo);
     }
 }
