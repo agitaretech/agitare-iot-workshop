@@ -23,12 +23,17 @@ var connectCallback = function (err) {
   
         // Create a message and send it to the IoT Hub every second
         setInterval(function(){
-            var current = dht.read(11, 4); // 11 -> DHT11, 4 -> GPIO  
-            var data = JSON.stringify({ deviceId: 'myFirstNodeDevice', temperature: current.temperature, humidity: current.humidity });
-            var message = new Message(data);
-            console.log("Sending message: " + message.getData());
-            client.sendEvent(message, printResultFor('send'));
-        }, 1000);
+            var currentMeasure = null;
+            try {
+                currentMeasure = dht.read(11, 4); // 11 -> DHT11, 4 -> GPIO
+                var data = JSON.stringify({ deviceId: 'AgitareTechIoTWorkshopDevice', temperature: currentMeasure.temperature, humidity: currentMeasure.humidity });
+                var message = new Message(data);
+                console.log("Sending message: " + message.getData());
+                client.sendEvent(message, printResultFor('send'));
+            } catch (err) {
+                console.log("Error: An error occured while reading or transmitting sensor data.")
+            }
+        }, 10000);
     }
 };
 
